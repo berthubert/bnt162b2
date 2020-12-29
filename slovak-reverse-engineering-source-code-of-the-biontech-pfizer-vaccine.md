@@ -25,6 +25,7 @@ BioNTech/Pfizer mRNA vakcíny SARS-CoV-2.">
 / [Polskie](https://randomseed.pl/rna/reverse-engineering-kodu-zrodlowego-szczepionki-biontech-pfizer-covid-sars-cov-2/)
 / [русский](https://localcrew.ru/reversepfizer)
 / [Português](https://docs.google.com/document/d/1pDo40DXcpXjzqAUfhFfup50-IQ2Qct-mhLnmRpjFZWM/edit).
+/ [Slovensky](https://berthub.eu/articles/posts/slovak-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/).
 / [Markdown for translating](https://raw.githubusercontent.com/berthubert/bnt162b2/master/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine.md)
 
 Vitajte! V tomto článku sa pozrieme znak po znaku na zdrojový kód
