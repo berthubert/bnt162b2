@@ -47,7 +47,7 @@ Je to dobrá otázka.  Začnime preto malou časťou BioNTech/Pfizer vakcíny
 [tiež známej ako Comirnaty](https://twitter.com/PowerDNS_Bert/status/1342109138965422083).
 
 <center>
-{{< figure src="/articles/bnt162b2.png" caption="Prvých 500 znakov mRNA BNT162b2.  Source: [World Health Organization](https://mednet-communities.net/inn/db/media/docs/11889.doc)">}}
+{{< figure src="/articles/bnt162b2.png" caption="Prvých 500 znakov mRNA BNT162b2. Zdroj: [World Health Organization](https://mednet-communities.net/inn/db/media/docs/11889.doc)">}}
 </center>
 
 mRNA vakcína BNT162b má vo svojom srdci tento digitálny kód.  Má 4284 znakov, takže by sa
@@ -55,7 +55,7 @@ zmestil do zopár tweetov.  Na začiatku výroby vakcíny niekto nahral tento k�
 tlačiarne (naozaj), ktorá potom premenila bajty z disku na molekuly DNA.
 
 <center>
-{{< figure src="/articles/bioxp-3200.jpg" caption=" DNA tlačiareň [Codex](https://codexdna.com/products/bioxp-system/) BioXp 3200" >}}
+{{< figure src="/articles/bioxp-3200.jpg" caption=" DNA tlačiareň BioXp 3200 od firmy [Codex](https://codexdna.com/products/bioxp-system/)" >}}
 </center>
 
 Z takéhoto zariadenia vychádza v malých množstvách DNA, ktorá sa po
@@ -90,7 +90,7 @@ používa A, C, G a U/T (známe ako "nukleotidy", alebo "bázy").
 V počítačoch ukladáme 0 a 1 ako prítomnosť alebo neprítomnosť elektrického náboja,
 ako prúd, magnetickými prechodmi, ako napätie, ako moduláciu signálu, alebo ako
 zmenu v odrazivosti.  Skrátka, nuly a jednotky nie sú akýmsi abstraktným
-konceptom, ale žijú ako elektróny, či iné fyzické objekty.
+konceptom, ale existujú ako elektróny, či iné fyzické objekty.
 
 V prírode sú A, C, G a U/T molekulami, ktoré sú uložené ako reťazce v DNA (alebo RNA).
 
@@ -98,7 +98,7 @@ V počítačoch 8 bitov spájame do bajtu a bajt je typickou jednotkou dát,
 s ktorými potom pracujeme.
 
 V prírode sa 3 nukleotidy spájajú do kodónu a kodón je typickou dátovou jednotkou.
-Jeden kodón obsahuje 6 bitov informácie (2 bity na každý znak DNA, 3 znaky = 6 bitov.
+Jeden kodón obsahuje 6 bitov informácií (2 bity na každý znak DNA, 3 znaky = 6 bitov.
 To znamená 2⁶ = 64 rôznych hodnôt).
 
 Zatiaľ celkom digitálne. Ak máte pochybnosti pozrite si digitálny kód priamo
@@ -107,7 +107,7 @@ Zatiaľ celkom digitálne. Ak máte pochybnosti pozrite si digitálny kód priam
 > *Ďalší materiál k tejto téme sa [nachádza aj
 > tu](https://berthub.eu/articles/posts/what-is-life/) - tento článok ("What is life" -
 > v angličtine - pozn. prekl.) vám  môže pomôcť lepšie pochopiť zvyšok tohto článku.
-> Alebo, ak máte radi video, mám tu [pre vás dve hodiny](https://berthub.eu/dna).*
+> Prípadne ak máte radi video, mám tu [pre vás dve hodiny](https://berthub.eu/dna).*
 
 Takže čo vlastne ten kód robí?!
 --------------------------
@@ -132,7 +132,7 @@ náš imunitný systém narazí na Spike proteíny a (hlavne) na signály, že
 niektoré bunky boli napadnuté, vyvinie ráznu obrannú reakciu voči niekoľkým
 aspektom Spike proteínov A aj ich výrobnému procesu.
 
-A toto je to, vďaka čomu máme vakcínu s 95% úspešnosťou.
+A toto je to, vďaka čomu máme vakcínu s 95% účinnosťou.
 
 Zdrojový kód!
 ----------------
@@ -158,9 +158,9 @@ GA
 Toto sa dá veľmi dobre prirovnať ku každému spustiteľnému DOS a Windows súboru,
 [ktorý začína na MZ](https://en.wikipedia.org/wiki/DOS_MZ_executable), alebo
 k UNIX skriptom, ktoré začínajú na
-[`#!`](https://en.wikipedia.org/wiki/Shebang_(Unix)).
+[`#!`](https://en.wikipedia.org/wiki/Shebang_(Unix).
 V biológií ani v operačných systémoch sa tieto dva znaky nijak nespúšťajú. No je
-ich treba, lebo bez nich sa nezačne nič diať.
+ich treba, lebo bez nich by sa nič nezačalo diať.
 
 mRNA "čiapka" [má mnoho funkcií](https://en.wikipedia.org/wiki/Five-prime_cap#Function). Napríklad označuje, že kód pochádza z bunkového
 jadra. V našom prípade tomu tak samozrejme nie je, náš kód pochádza z vakcíny.
@@ -168,7 +168,7 @@ Ale toto bunke nepovieme. Čiapka napomáha nášmu kódu vyzerať bezpečne
 a tým ho chráni pred predčasným zničením.
 
 Prvé dva `GA` nukleotidy sú tiež chemicky mierne odlišné od zvyšku RNA.  Dá sa povedať,
-že `GA` nesie mimopásmový signál.
+že `GA` nesie mimopásmový (out-of-band) signál.
 
 "5' neprekladaná oblasť"
 ------------------------------------
@@ -188,12 +188,12 @@ GAAΨAAACΨAGΨAΨΨCΨΨCΨGGΨCCCCACAGACΨCAGAGAGAACCCGCCACC
 ```
 
 A tu je prvé prekvapenie.  Bežné znaky RNA sú A, C, G a U.  U je tiež známe
-ako "T" v DNA.  Ale tu je Ψ, čo sa deje?
+ako "T" v DNA.  Ale tu máme Ψ, čo sa deje?
 
-Toto je jedna z viacerách výnimočne dômyselných častí tejto vakcíny.
-V našom tele beží veľmi účinný antivírusový systém ("pôvodný antivír").
+Toto je jedna z viacerých výnimočne dômyselných častí tejto vakcíny.
+V našom tele beží veľmi účinný antivírusový systém ("prvý antivír").
 Z tohto dôvodu sú bunky veľmi neochotné prijať cudziu RNA a snažia ju čím
-skôr zničiť predtým, než niečo spôsobí.
+skôr zničiť, než niečo spôsobí.
 
 Toto je pre našu vakcínu trocha problematické - musí sa dostať cez náš
 imunitný systém. Po mnohých rokoch experimentov sa zistilo, že keď sa U v
@@ -201,7 +201,7 @@ RNA vymení za mierne modifikovanú molekulu, náš imunitný systém o ňu
 stratí záujem. Úplne vážne.
 
 Takže vo vakcíne BioNTech/Pfizer sa každé U vymenilo za
-1-methyl-3'-pseudouridylyl označované  Ψ.  Genialita tejto
+1-metyl-3'-pseudouridylyl označované  Ψ.  Genialita tejto
 zámeny je v tom, že aj keď Ψ upokojí náš imunitný systém, vo všetkých
 dôležitých častiach bunky je prijaté ako normálne U.
 
@@ -209,7 +209,7 @@ V počítačovej bezpečnosti tiež poznáme tento trik - niekedy je možné
 poslať mierne upravenú verziu správy ktorá zmätie firewally a bezpečnostné
 riešenia, no je stále spracovaná backend servermi - a vtedy sme hacknutí.
 
-Dnes využívame výsledky základného výskumu v minulosti.
+Dnes využívame výsledky základného výskumu z minulosti.
 [Objavitelia](https://twitter.com/PennMedicine/status/1341766354232365059)
 techniky s Ψ museli bojovať o to, aby na [ich](https://www.statnews.com/2020/11/10/the-story-of-mrna-how-a-once-dismissed-idea-became-a-leading-technology-in-the-covid-vaccine-race/)
 prácu mali dostatok prostriedkov a aby jej výsledky boli prijaté. Všetci by
@@ -225,7 +225,7 @@ sme mali byť za túto prácu vďační a som si istý, že [prídu aj Nobelove 
 > Are Not Going To Affect Your DNA](https://www.deplatformdisease.com/blog/no-really-mrna-vaccines-are-not-going-to-affect-your-dna)"
 
 OK, späť k 5' UTR. Čo týchto 51 znakov vlastne robí. Ako to už v prírode býva,
-takmer nič nemá jednu konkrétnu fukciu.
+takmer nič nemá len jednu konkrétnu fukciu.
 
 Keď naše bunky potrebujú *preložiť* RNA na proteíny, tento proces prebieha
 v prístroji, zvanom ribozóm.  Ribozóm je niečo ako 3D tlačiareň na proteíny.
@@ -279,7 +279,7 @@ výrazy nie sú ani v Star Treku!
 "Signálny peptid" nie je veľmi dlhý, no keď sa pozrieme kód, nájdeme
 medzi vírusom a RNA vakcíny rozdiely:
 
-(Pre jenoduchšie porovnanie som vymenil zmenené Ψ za bežné RNA U)
+(Pre jednoduchšie porovnanie som vymenil zmenené Ψ za bežné RNA U)
 
 ```
            3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3
@@ -306,7 +306,7 @@ aminokyseliny.
 </center>
 
 V tejto tabuľke vidíme, že modifikácie vo vakcíne (UUU -> UUC) sú všetky
-*synonymické*. RNA kód vakcíny je iný, no vyjdú z neho rovnaké
+*synonymické*. RNA kód vakcíny je iný, no vzniknú z neho rovnaké
 aminokyseliny a proteíny.
 
 Keď sa pozrieme bližšie, všimneme si, že väčšina zmien sa deje v tretej
@@ -357,10 +357,10 @@ Keď porovnáme celý Spike proteín vo vakcíne, všetky zmeny sú podobne
 synonymické... okrem dvoch, na ktoré sa teraz pozeráme.
 
 Tretí a štvrtý kodón vyššie predstavujú skutočné zmeny. Amynokyseliny K a V
-sú obe vymenené za "P" alebo prolín. Kvôli tejto zmene boli potrebné tri zmeny
+sú obe vymenené za "P", prolín. Kvôli tejto zmene boli potrebné tri zmeny
 ("!!!") pre "K" a dve zmeny ("!!") pre "V".
 
-***A tieto dve zmeny vystrelia účinnosť vakcíny do nových výšok**.
+**A tieto dve zmeny vystrelia účinnosť vakcíny do nových výšok**.
 
 Ako je to možné? Ak sa pozriete na skutočnú časticu SARS-CoV-2, uvidíte Spike
 proteíny ako skupinu výčnelkov:
@@ -392,7 +392,7 @@ na tento trik by si mali teraz neustále dávať high-fives a vyžarovať nafúk
 [A bolo by to úplne v poriadku](https://twitter.com/McLellan_Lab/status/1291077489566142464).
 
 > Novinka!  Kontaktovali ma ľudia z tímu [McLellan Lab](https://twitter.com/McLellan_Lab/status/1291077489566142464),
-> jednej zo skupín, ktorá stojí za týmyto prolínovým objavom. Dozvedel som
+> jednej zo skupín, ktorá stojí za týmto prolínovým objavom. Dozvedel som
 > sa, že high-fives sú nateraz pozastavené kvôli pandemickej situácií,
 > no sú radi, že mohli prispieť k vývoju vakcín. Tiež chceli upozorniť na
 > dôležitosť práce mnohých iných skupín, pracovníkov a dobrovoľníkov.
@@ -416,9 +416,9 @@ stop kodón UAA, vakcína zas, zrejme pre istotu, dva stop kodóny UGA.
 
 3' neprekladaná oblasť
 --------------------------
-Podobne ako ribozóm potreboval naviesť na 5' konci , kde sme našli
+Podobne, ako keď ribozóm potreboval "naviesť" na 5'-konci, kde sme našli
 "5' neprekladanú oblasť", takisto na konci oblasti kódujúcej proteín
-nájdeme podobnú štruktúru, ktorú nazývame 3' UTR ("three prime untranslated region" - pozn prekl.).
+nájdeme podobnú štruktúru, ktorú nazývame 3' UTR ("three prime untranslated region").
 
 O 3' UTR sa dá napísať mnoho, no ja si pomôžem [citátom z Wikipedie](https://en.wikipedia.org/wiki/Three_prime_untranslated_region): "3' neprekladaná oblasť je dôležitá
 pre génovú expresiu kvôli jej vplyvu na účinnosť lokalizácie, stability,
@@ -448,7 +448,7 @@ zmysle slúži "poly-A" koniec ako ochrana pred degradáciou.
 
 Niekoľko štúdií sa venovalo tomu, aký je optimálny počet A-čok na konci
 mRNA vakcín. Vo voľne prístupnej literatúre som sa dozvedel, že toto číslo
-môže byť maximálne 120.
+môže byť až 120.
 
 Vakcína BNT162b2 končí na:
 
@@ -466,7 +466,7 @@ expresie.
 
 Záverom
 -----------
-Poznáme teda presné zloženie mRNA vakcíny BNT162b2 a pre väčšinu jej súčastí
+Poznáme teda presné zloženie mRNA vakcíny BNT162b2 a pri väčšine jej súčastí
 aj rozumieme, na čo slúžia:
 
  * čiapka, ktorá sa stará o to, aby RNA vyzerala ako bežná mRNA
@@ -478,7 +478,7 @@ aj rozumieme, na čo slúžia:
  * dobre známa a zoptimalizovaná 3' neprekladaná oblasť
  * trocha záhadný poly-A koniec s nevysvetleným prepajacím "linkerom"
 
-Kodonové optimalizácie pridávajú do mRNA kopu G-čok a C-čok. Použitie Ψ
+Kodónové optimalizácie pridávajú do mRNA kopu G-čok a C-čok. Použitie Ψ
 (1-methyl-3'-pseudouridylylu) namiesto U zasa pomáha vyhnúť sa imunitnému
 systému, takže mRNA vydrží dostatočne dlho na to, aby nám ho pomohla
 vytrénovať.
