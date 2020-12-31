@@ -56,11 +56,16 @@ func (s byBestSynonym) Less(i, j int) bool {
     return score(s[i][1]) > score(s[j][1])
 }
 
-func bestCodon(amino string, codons [][]string) string {
+func bestCodon(amino string, virus_codon string, codons [][]string) string {
   synonym := func(s []string) bool { return s[0] == amino }
   synonyms := filter(codons, synonym)
   sort.Sort(byBestSynonym(synonyms))
-  return synonyms[0][1]
+  winner := synonyms[0][1]
+  // Never change a winning team:
+  if score(winner) == score(virus_codon) {
+    return virus_codon
+  }
+  return winner
 }
 
 
@@ -85,7 +90,7 @@ func main() {
 			vir, vac,
 			c2s[vir], c2s[vac])
 
-		our = bestCodon(c2s[vir], codons)
+		our = bestCodon(c2s[vir], vir, codons)
 
 		fmt.Printf(" ")
 		if(vac == our) {
