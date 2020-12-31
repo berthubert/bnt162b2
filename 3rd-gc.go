@@ -39,39 +39,47 @@ func main() {
 	
 	// read the codons
 	virvac := readCsvFile("side-by-side.csv")[1:]
+	
 	matches := 0.0
 	for _, element := range virvac {
 		vir:=element[1]
 		vac:=element[2]
-		if(vir == vac) {
-			matches++;
-		} else {
-			fmt.Printf("%s != %s, amino: %s == %s. ",
-				vir, vac,
-				c2s[vir], c2s[vac])
+		var our string
+		var prop string
+		fmt.Printf("%s v %s, amino: %s == %s. ",
+			vir, vac,
+			c2s[vir], c2s[vac])
 
-			vir = vir[:2]+"G"
-			fmt.Printf("Attempting G substitution, new candidate '%s'. ", vir)
-			if(c2s[vir] == c2s[vac]) {
-				fmt.Printf("Protein still the same. ")
-				if(vir == vac) {
-					fmt.Printf("Match!")
-					matches++
-				}
-				
+		// base case, don't do anything
+		our = vir
+		
+		// don't do anything if codon ends on G or C already
+		if(vir[2] == 'G' || vir[2] =='C') {
+			fmt.Printf("Codon ended on G or C already, not doing anything.")
+		} else {
+			prop = vir[:2]+"G"
+			fmt.Printf("Attempting G substitution, new candidate '%s'. ", prop)
+			if(c2s[vir] == c2s[prop]) {
+				fmt.Printf("Amino acid still the same, done!")
+				our = prop
 			} else {
-				fmt.Printf("Oops, amino acid changed. Trying C.")
-				vir = vir[:2]+"C"
-				if(c2s[vir] == c2s[vac]) {
-					fmt.Printf("Protein still the same. ")
-					if(vir == vac) {
-						fmt.Printf("Match!")
-						matches++
-					}
-					
-				}
+				fmt.Printf("Oops, amino acid changed. Trying C, new candidate '%s'. ", prop)
+				prop = vir[:2]+"C"
+				if(c2s[vir] == c2s[prop]) {
+					fmt.Printf("Amino acid still the same, done!")
+					our=prop
+				} 
+				
 			}
-			fmt.Printf("\n")
+		
+		}
+		
+		fmt.Printf(" ")
+		if(vac == our) {
+			fmt.Printf("Matched the vaccine!\n")
+			matches++
+		} else {
+			fmt.Printf("No match.\n")
 		}
 	}
 	fmt.Printf("%.1f%%\n", 100.0*matches/float64(len(virvac)))
