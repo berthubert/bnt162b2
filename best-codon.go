@@ -88,7 +88,7 @@ func main() {
 			fmt.Printf("Matched the vaccine!\n")
 			matches++
 		} else {
-			fmt.Printf("No match.\n")
+			fmt.Printf("No match (%s)\n", our)
 		}
 	}
 	fmt.Printf("%.1f%%\n", 100.0*matches/float64(len(virvac)))
