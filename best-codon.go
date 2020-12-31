@@ -47,9 +47,13 @@ func (s byBestSynonym) Swap(i, j int) {
     s[i][1], s[j][1] = s[j][1], s[i][1]
 }
 
+func score(codon string) int {
+  return strings.Count(codon, "C") + strings.Count(codon, "G")
+}
+
 // sort by highest occurance of C and G
 func (s byBestSynonym) Less(i, j int) bool {
-    return strings.Count(s[i][1], "C") + strings.Count(s[i][1], "G") > strings.Count(s[j][1], "C") + strings.Count(s[j][1], "G")
+    return score(s[i][1]) > score(s[j][1])
 }
 
 func bestCodon(amino string, codons [][]string) string {
