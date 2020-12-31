@@ -13,17 +13,28 @@ images:
 <meta name="twitter:image" content="https://berthub.eu/articles/bnt162b2.png">
 
 **Translations**: [ελληνικά](https://berthub.eu/articles/posts/greek-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
+/ [عربى](https://docs.google.com/document/d/17IEvUBHZnx-Yf-sPoGzih_pAr4eemBmXUplOd0WtWk4/edit)
 / [中文](https://mp.weixin.qq.com/s/b0Mw8uKLYuXHJ5Bj3t2Dwg)
+/ [粵文](https://medium.com/@it9gamelog/reverse-engineering-biontech-pfizer-bnt162b2-2ce758508fb4)
+/ [bahasa Indonesia](https://berthub.eu/articles/posts/merekayasa-balik-kode-sumber-vaksin-sars-cov-2-biontech-pfizer/)
+/ [Català](https://www.webscatalunya.com/blog-disseny-web/programacio/enginyeria-inversa-del-codi-font-de-la-vacuna-de-biontech-pfizer-per-la-sars-cov-2/)
 / [Deutsch](https://berthub.eu/articles/posts/german-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
-/ [Español](https://docs.google.com/document/d/1FxswEeem2kP1AUF979P7INBlkD1OzMzVHPEKeU9R2kw/edit)
+/ [Español](https://berthub.eu/articles/posts/ingenieria_inversa_del_codigo_fuente_de_la_vacuna_de_biontech_pfizer_para_el_sars-cov-2/)
 / [Français](https://renaudguerin.net/posts/explorons-le-code-source-du-vaccin-biontech-pfizer-sars-cov-2/)
 / [עִברִית](https://github.com/chilik/Hebrew-ReversingSARS-CoV-2mRNAVaccine/blob/main/%D7%94%D7%A0%D7%93%D7%A1%D7%94%20%D7%9C%D7%90%D7%97%D7%95%D7%A8%20%D7%A9%D7%9C%20%D7%A7%D7%95%D7%93%20%D7%94%D7%9E%D7%A7%D7%95%D7%A8%20%D7%A9%D7%9C%20%D7%94%D7%97%D7%99%D7%A1%D7%95%D7%9F%20BioNTech%20-%20Pfizer%20SARS-CoV-2.pdf)
+/ [עִברִית2](https://madaduhcom.wpcomstaging.com/2020/12/28/mrna_vaccine_programming_language/)
 / [Hrvatski](https://docs.google.com/document/d/1BODRitAvGuDYGZCHU5LY-AkNhs9_1cVDubdRvz-cSPY/edit)
 / [Italiano](https://berthub.eu/articles/posts/italian-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
+/ [Nederlands](https://berthub.eu/articles/posts/dutch-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
+/ [日本語](https://note.com/yubais/n/n349ab986da42)
+/ [日本語 2](https://msakai.github.io/bnt162b2/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine.ja/)
 / [नेपाली](https://onedrive.live.com/view.aspx?resid=9C571BA15BC4287D!15298&ithint=file%2cdocx&authkey=!ALATa2b8xetI7lQ)
 / [Polskie](https://randomseed.pl/rna/reverse-engineering-kodu-zrodlowego-szczepionki-biontech-pfizer-covid-sars-cov-2/)
 / [русский](https://localcrew.ru/reversepfizer) 
-/ [Português](https://docs.google.com/document/d/1pDo40DXcpXjzqAUfhFfup50-IQ2Qct-mhLnmRpjFZWM/edit).
+/ [Português](https://docs.google.com/document/d/1pDo40DXcpXjzqAUfhFfup50-IQ2Qct-mhLnmRpjFZWM/edit)
+/ [Română](https://www.astarostech.com/read/sarscov2-ro/vaccine-mrna.html)
+/ [Slovensky](https://dennikn.sk/blog/2205850/ako-funguje-zdrojovy-kod-vakciny-sars-cov-2/) 
+/ [український](https://texty.org.ua/articles/102631/rekonstrukciya-vyhidnoho-kodu-vakcyny-biontechpfizer-sars-cov-2/)
 / [Markdown for translating](https://raw.githubusercontent.com/berthubert/bnt162b2/master/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine.md)
 
 Welcome! In this post, we'll be taking a character-by-character look at the
@@ -47,7 +58,7 @@ Comirnaty](https://twitter.com/PowerDNS_Bert/status/1342109138965422083).
 {{< figure src="/articles/bnt162b2.png" caption="First 500 characters of the BNT162b2 mRNA. Source: [World Health Organization](https://mednet-communities.net/inn/db/media/docs/11889.doc)">}}
 </center>
 
-The BNT162b mRNA vaccine has this digital code at its heart.  It is 4284
+The BNT162b2 mRNA vaccine has this digital code at its heart.  It is 4284
 characters long, so it would fit in a bunch of tweets.  At the very
 beginning of the vaccine production process, someone uploaded this code to a
 DNA printer (yes), which then converted the bytes on disk to actual DNA
