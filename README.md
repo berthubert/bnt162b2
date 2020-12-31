@@ -10,11 +10,19 @@ of course we should also be grateful to the many many researchers that
 worked for decades to bring the state of the art to the point that such a
 vaccine could be developed.  It is marvelous.
 
-
 This GitHub repository is a companion to [Reverse Engineering the source code of the BioNTech/Pfizer SARS-CoV-2
 Vaccine](https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
 and [part
 2](https://berthub.eu/articles/posts/part-2-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/).
+
+In part 2 we find the challenge: Can we find an algorithm that turns the
+viral RNA into the vaccine RNA?
+
+If so that would help explain how the vaccine is designed. It would also be
+useful for other researchers to turn viral RNA into RNA that gets converted
+into proteins efficiently.  
+
+Details are in [part 2](https://berthub.eu/articles/posts/part-2-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/).
 
 Data files
 ----------
