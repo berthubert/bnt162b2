@@ -21,16 +21,52 @@ document](https://mednet-communities.net/inn/db/media/docs/11889.doc).
 
 In short: the vaccine mRNA has been optimized by the manufacturer by
 changing bits of RNA from (say) `UUU` to `UUC`, and people would like to
-understand how.  This challenge is quite close to what cryptologists and
-reverse engineering people encounter regularly.  On this page, you'll find
-all the details you need to get cracking to reverse engineer just HOW the
-vaccine has been optimized.
+understand the logic behind these changes.  This challenge is quite close to what
+cryptologists and reverse engineering people encounter regularly.  On this
+page, you'll find all the details you need to get cracking to reverse
+engineer just HOW the vaccine has been optimized.
 
 I thought this would just be a fun puzzle, but I have just been informed that
 figuring out the optimization procedure & documenting it is tremendously
-important for researchers around the world.
+important for researchers around the world, as this would help them design
+code for proteins and vaccines.
 
 So, if you want to help vaccine research, do read on!
+
+The leader board
+----------------
+Here are the current best entrants to the optimization algorithm:
+
+<table>
+<tr><th>Name</th><th>Score</th><th>Author</th><th>Comment</th></tr>
+<tr><td><a
+href="https://gist.github.com/naomiajacobs/1e9de466ead8f362394cdfd581ec74fd#gistcomment-3578742">dnachisel</a></td><td>90.9%</td><td><a
+href="https://twitter.com/pvieito">Pedro José Pereira Vieito</a></td><td><a
+href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel
+algorithm</a> </td></tr>
+<tr><td><a
+href="https://gist.github.com/naomiajacobs/1e9de466ead8f362394cdfd581ec74fd">dnachisel</a></td><td>79.5%</td><td><a
+href="https://twitter.com/naomicodes">Naomi Jacobs</a></td><td><a
+href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel
+algorithm</a> </td></tr>
+<tr><td><a
+href="https://gist.github.com/sanxiyn/fddd1f18074076fb47e04733e6b62865">most-frequent.py</a></td><td>78.3%</td><td><a
+href="https://twitter.com/sanxiyn">Seo Sanghyeon</a></td><td>Codon frequency
+optimization using python_codon_tables</td></tr>
+<tr><td><a
+href="https://github.com/unrelatedlabs/bnt162b2/blob/master/reverse.ipynb">3rd-cg.py</a></td><td>60.8%</td><td><a
+href="https://twitter.com/pkuhar">Peter Kuhar</a></td><td>If third position is already 'G' or 'C', no change. Otherwise
+replace third position by a C, if protein still matches, done. Otherwise try a G.</td></tr>
+<tr><td><a
+href="https://github.com/berthubert/bnt162b2/blob/master/3rd-gc.go">3rd-gc.go</a></td><td>53.1%</td><td>bert
+hubert</td><td>If third position is already 'G' or 'C', no change. Otherwise
+replace third position by a G, if protein still matches, done. Otherwise try a C.</td></tr>
+<tr><td>Nop</td><td>27.6%</td><td></td><td>Does not do any optimization at all</td></tr>
+</table>
+
+Please send updates to bert@hubertnet.nl or
+[@PowerDNS_Bert](https://twitter.com/PowerDNS_Bert).
+
 
 BioNTech
 --------
@@ -139,6 +175,59 @@ interchanged without changing the amino acid output. Please find this in
 [codon-table-grouped.csv](https://github.com/berthubert/bnt162b2/blob/master/codon-table-grouped.csv).
 There is also a visual version
 [here](https://en.wikipedia.org/wiki/DNA_and_RNA_codon_tables#Standard_DNA_codon_table).
+
+A sample algorithm
+------------------
+On the [GitHub repository](https://github.com/berthubert/bnt162b2) you can
+find
+[3rd-gc.gp](https://github.com/berthubert/bnt162b2/blob/master/3rd-gc.go). 
+
+This implements a simple strategy that works like this:
+
+ * If a virus codon already ended on G or C, copy it to the vaccine mRNA
+ * If not, replace last nucleotide in codon by a G, see if the amino acid
+   still matches, if so, copy to the vaccine mRNA
+ * Try the same with a C
+ * Otherwise copy as is
+
+Or in `golang`:
+
+```
+// base case, don't do anything
+our = vir
+
+// don't do anything if codon ends on G or C already
+if(vir[2] == 'G' || vir[2] =='C') {
+	fmt.Printf("Codon ended on G or C already, not doing anything.")
+} else {
+	prop = vir[:2]+"G"
+	fmt.Printf("Attempting G substitution, new candidate '%s'. ", prop)
+	if(c2s[vir] == c2s[prop]) {
+		fmt.Printf("Amino acid still the same, done!")
+		our = prop
+	} else {
+		fmt.Printf("Oops, amino acid changed. Trying C, new candidate '%s'. ", prop)
+		prop = vir[:2]+"C"
+		if(c2s[vir] == c2s[prop]) {
+			fmt.Printf("Amino acid still the same, done!")
+			our=prop
+		} 
+		
+	}
+
+}
+```
+
+This achieves a rather poor 53.1% match with the BioNTech RNA vaccine, but
+it is a start.
+
+When you design your algorithm, be sure to only base your choices on the
+virus RNA. Do not peak into the BioNTech RNA!
+
+If you have achieved a score beyond 53.1% please email a link to your code
+to bert@hubertnet.nl (or [@PowerDNS_Bert](https://twitter.com/PowerDNS_Bert)
+and I'll put it on the leader board at the top of this page!
+ 
 
 Things that will help
 ---------------------
