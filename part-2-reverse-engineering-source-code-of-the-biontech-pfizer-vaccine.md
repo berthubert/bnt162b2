@@ -35,33 +35,73 @@ So, if you want to help vaccine research, do read on!
 
 The leader board
 ----------------
-Here are the current best entrants to the optimization algorithm:
+Here are the current best entrants to the optimization algorithm (average of 20 runs):
 
 <table>
-<tr><th>Name</th><th>Score</th><th>Author</th><th>Comment</th></tr>
-<tr><td><a
-href="https://gist.github.com/naomiajacobs/1e9de466ead8f362394cdfd581ec74fd#gistcomment-3578742">dnachisel</a></td><td>90.9%</td><td><a
-href="https://twitter.com/pvieito">Pedro José Pereira Vieito</a></td><td><a
-href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel
-algorithm</a> </td></tr>
-<tr><td><a
-href="https://gist.github.com/naomiajacobs/1e9de466ead8f362394cdfd581ec74fd">dnachisel</a></td><td>79.5%</td><td><a
-href="https://twitter.com/naomicodes">Naomi Jacobs</a></td><td><a
-href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel
-algorithm</a> </td></tr>
-<tr><td><a
-href="https://gist.github.com/sanxiyn/fddd1f18074076fb47e04733e6b62865">most-frequent.py</a></td><td>78.3%</td><td><a
-href="https://twitter.com/sanxiyn">Seo Sanghyeon</a></td><td>Codon frequency
-optimization using python_codon_tables</td></tr>
-<tr><td><a
-href="https://github.com/unrelatedlabs/bnt162b2/blob/master/reverse.ipynb">3rd-cg.py</a></td><td>60.8%</td><td><a
-href="https://twitter.com/pkuhar">Peter Kuhar</a></td><td>If third position is already 'G' or 'C', no change. Otherwise
-replace third position by a C, if protein still matches, done. Otherwise try a G.</td></tr>
-<tr><td><a
-href="https://github.com/berthubert/bnt162b2/blob/master/3rd-gc.go">3rd-gc.go</a></td><td>53.1%</td><td>bert
-hubert</td><td>If third position is already 'G' or 'C', no change. Otherwise
-replace third position by a G, if protein still matches, done. Otherwise try a C.</td></tr>
-<tr><td>Nop</td><td>27.6%</td><td></td><td>Does not do any optimization at all</td></tr>
+<tr><th>Name</th><th>Codon Match</th><th>Nucleotide Match<th>Author</th><th>Comment</th></tr>
+<tr>
+  <td>codon mapping</td>
+  <td>79.51 %</td>
+  <td>91.52  %</td>
+  <td>Harry Harpel</td>
+  <td><a href="https://github.com/berthubert/bnt162b2/blob/master/vaccine_dict.json">A simple static codon mapping</a></td>
+</tr>
+<tr>
+  <td><a href="https://gist.github.com/sanxiyn/fddd1f18074076fb47e04733e6b62865">most-frequent.py</a></td>
+  <td>78.57 %</td>
+  <td>91.08 %</td>
+  <td><a href="https://twitter.com/sanxiyn">Seo Sanghyeon</a></td>
+  <td>Codon frequency optimization using python_codon_tables</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/cibo6/bnt162b2">dnachisel</a></td>
+  <td>76.99 %</td>
+  <td>91.06 %</td>
+  <td><a href="https://www.linkedin.com/in/erik-brauer/">Erik Brauer</a></td>
+  <td><a href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel algorithm</a></td>
+</tr>
+<tr>
+  <td><a href="https://gist.github.com/naomiajacobs/1e9de466ead8f362394cdfd581ec74fd#gistcomment-3578742">dnachisel</a></td>
+  <td>76.89 %</td>
+  <td>90.89 %</td>
+  <td><a href="https://twitter.com/pvieito">Pedro José Pereira Vieito</a></td>
+  <td><a href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel algorithm</a></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/hyc/bnt162b2/commit/b7b84a114748940de724992d6a6a5fc65b454fb0">remap</a></td>
+  <td>71.11 %</td>
+  <td>88.59 %</td>
+  <td><a href="https://twitter.com/hyc_symas">Howard Chu</a></td>
+  <td>Map every codon to an amino acid, pick the best codon for that amino acid</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/unrelatedlabs/bnt162b2/blob/master/reverse.ipynb">3rd-cg.py</a></td>
+  <td>60.83 %</td>
+  <td>85.11 %</td>
+  <td><a href="https://twitter.com/pkuhar">Peter Kuhar</a></td>
+  <td>If third position is already 'G' or 'C', no change. Otherwise replace third position by a C, if protein still matches, done. Otherwise try a G.</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/berthubert/bnt162b2/blob/master/3rd-gc.go">3rd-gc.go</a></td>
+  <td>53.06 %</td>
+  <td>81.55 %</td>
+  <td>bert hubert</td>
+  <td>If third position is already 'G' or 'C', no change. Otherwise replace third position by a G, if protein still matches, done. Otherwise try a C.</td>
+</tr>
+<tr>
+  <td><a href="https://gist.github.com/naomiajacobs/1e9de466ead8f362394cdfd581ec74fd">dnachisel</a></td>
+  <td>46.33 %</td>
+  <td>79.48 %</td>
+  <td><a href="https://twitter.com/naomicodes">Naomi Jacobs</a></td>
+  <td><a href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel algorithm</a></td>
+</tr>
+<tr>
+  <td>NOP</td>
+  <td>27.63 %</td>
+  <td>72.23 %</td>
+  <td></td>
+  <td>Does not do any optimization at all</td>
+</tr>
 </table>
 
 Please send updates to bert@hubertnet.nl or
