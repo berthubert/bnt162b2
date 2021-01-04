@@ -40,15 +40,27 @@ Here are the current best entrants to the optimization algorithm:
 <table>
 <tr><th>Name</th><th>Score</th><th>Author</th><th>Comment</th></tr>
 <tr><td><a
+href="https://github.com/cibo6/bnt162b2">dnachisel</a></td><td>91.08%</td><td><a
+href="https://www.linkedin.com/in/erik-brauer/">Erik Brauer</a></td><td><a
+href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel
+algorithm</a></td></tr>
+<tr><td><a
 href="https://gist.github.com/naomiajacobs/1e9de466ead8f362394cdfd581ec74fd#gistcomment-3578742">dnachisel</a></td><td>90.9%</td><td><a
 href="https://twitter.com/pvieito">Pedro José Pereira Vieito</a></td><td><a
 href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel
 algorithm</a> </td></tr>
 <tr><td><a
+href="https://github.com/hyc/bnt162b2/commit/b7b84a114748940de724992d6a6a5fc65b454fb0">remap</a></td><td>88.5%</td><td><a
+href="https://twitter.com/hyc_symas">Howard Chu</a></td><td>Map every codon
+to an amino acid, pick the best codon for that amino acid</td></tr>
+<tr><td><a
 href="https://gist.github.com/naomiajacobs/1e9de466ead8f362394cdfd581ec74fd">dnachisel</a></td><td>79.5%</td><td><a
 href="https://twitter.com/naomicodes">Naomi Jacobs</a></td><td><a
 href="https://edinburgh-genome-foundry.github.io/DnaChisel/">DNAChisel
 algorithm</a> </td></tr>
+<tr><td>codon mapping</td><td>79.4%</td><td>Harry Harpel</td><td><a
+href="https://github.com/berthubert/bnt162b2/blob/master/vaccine_dict.json">A simple static codon
+mapping</a></td></tr>
 <tr><td><a
 href="https://gist.github.com/sanxiyn/fddd1f18074076fb47e04733e6b62865">most-frequent.py</a></td><td>78.3%</td><td><a
 href="https://twitter.com/sanxiyn">Seo Sanghyeon</a></td><td>Codon frequency
