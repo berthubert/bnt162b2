@@ -14,15 +14,18 @@ images:
 
 **Translations**: [ελληνικά](https://berthub.eu/articles/posts/greek-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
 / [عربى](https://docs.google.com/document/d/17IEvUBHZnx-Yf-sPoGzih_pAr4eemBmXUplOd0WtWk4/edit)
-/ [中文](https://mp.weixin.qq.com/s/b0Mw8uKLYuXHJ5Bj3t2Dwg)
+/ [中文](https://mp.weixin.qq.com/s/b0Mw8uKLYuXHJ5Bj3t2Dwg) ([Weixin video](https://mp.weixin.qq.com/s/3z3L0ZtI_JcdlXLB_ZH4lQ), [Youtube video](https://www.youtube.com/watch?v=G75j4qKexN0&feature=youtu.be))
 / [粵文](https://medium.com/@it9gamelog/reverse-engineering-biontech-pfizer-bnt162b2-2ce758508fb4)
 / [bahasa Indonesia](https://berthub.eu/articles/posts/merekayasa-balik-kode-sumber-vaksin-sars-cov-2-biontech-pfizer/)
+/ [český](https://benedikz.space/articles/reverse-engineering-zdrojoveho-kodu-vakciny-biontech-pfizer.html)
 / [Català](https://www.webscatalunya.com/blog-disseny-web/programacio/enginyeria-inversa-del-codi-font-de-la-vacuna-de-biontech-pfizer-per-la-sars-cov-2/)
+/ [český](https://benedikz.space/articles/reverse-engineering-zdrojoveho-kodu-vakciny-biontech-pfizer.html)
 / [Deutsch](https://berthub.eu/articles/posts/german-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
 / [Español](https://berthub.eu/articles/posts/ingenieria_inversa_del_codigo_fuente_de_la_vacuna_de_biontech_pfizer_para_el_sars-cov-2/)
+/ [2فارسی](https://virgool.io/@afeizi/%D9%85%D9%87%D9%86%D8%AF%D8%B3%DB%8C-%D9%85%D8%B9%DA%A9%D9%88%D8%B3-%DA%A9%D9%8F%D8%AF-%D9%85%D9%86%D8%A8%D8%B9%D9%8D-%D9%88%D8%A7%DA%A9%D8%B3%D9%86-%D9%85%D8%B4%D8%AA%D8%B1%DA%A9-%D8%A8%DB%8C%D9%88%D8%A7%D9%86%D8%AA%DA%A9-%D9%88-%D9%BE%DB%8C-%D9%81%D8%A7%DB%8C%D8%B2%D8%B1-yk6ti7m1aabg)
+/ [فارسی](https://docs.google.com/document/d/1zNoxsxP-vW5Odv6QZUZYJ4FxAFK1EktQnjwQ5AuCTzc/edit)
 / [Français](https://renaudguerin.net/posts/explorons-le-code-source-du-vaccin-biontech-pfizer-sars-cov-2/)
 / [עִברִית](https://github.com/chilik/Hebrew-ReversingSARS-CoV-2mRNAVaccine/blob/main/%D7%94%D7%A0%D7%93%D7%A1%D7%94%20%D7%9C%D7%90%D7%97%D7%95%D7%A8%20%D7%A9%D7%9C%20%D7%A7%D7%95%D7%93%20%D7%94%D7%9E%D7%A7%D7%95%D7%A8%20%D7%A9%D7%9C%20%D7%94%D7%97%D7%99%D7%A1%D7%95%D7%9F%20BioNTech%20-%20Pfizer%20SARS-CoV-2.pdf)
-/ [עִברִית2](https://madaduhcom.wpcomstaging.com/2020/12/28/mrna_vaccine_programming_language/)
 / [Hrvatski](https://docs.google.com/document/d/1BODRitAvGuDYGZCHU5LY-AkNhs9_1cVDubdRvz-cSPY/edit)
 / [Italiano](https://berthub.eu/articles/posts/italian-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
 / [Nederlands](https://berthub.eu/articles/posts/dutch-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
@@ -34,6 +37,8 @@ images:
 / [Português](https://docs.google.com/document/d/1pDo40DXcpXjzqAUfhFfup50-IQ2Qct-mhLnmRpjFZWM/edit)
 / [Română](https://www.astarostech.com/read/sarscov2-ro/vaccine-mrna.html)
 / [Slovensky](https://dennikn.sk/blog/2205850/ako-funguje-zdrojovy-kod-vakciny-sars-cov-2/) 
+/ [Slovenščina](https://berthub.eu/articles/posts/reverzni-inženiring-izvorne-kode-cepiva-biontech-pfizer-proti-sars-cov-2/) 
+/ [Türk](https://berthub.eu/articles/posts/biontech-pfizer-mrna-a%C5%9F%C4%B1lar%C4%B1n%C4%B1n-kaynak-kodu/)
 / [український](https://texty.org.ua/articles/102631/rekonstrukciya-vyhidnoho-kodu-vakcyny-biontechpfizer-sars-cov-2/)
 / [Markdown for translating](https://raw.githubusercontent.com/berthubert/bnt162b2/master/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine.md)
 
@@ -86,11 +91,16 @@ tended to.  The reason the Pfizer/BioNTech mRNA vaccine must be stored in the
 deepest of deep freezers is the same: RNA is a fragile flower.
 
 Each RNA character weighs on the order of 0.53&middot;10⁻²¹ grams, meaning
-there are 6&middot;10¹⁶ characters in a single 30 microgram vaccine dose. 
-Expressed in bytes, this is around 25 petabytes, although it must be said
-this consists of around 2000 billion repetitions of the same 4284
+there are around 6&middot;10¹⁶ characters in a single 30 microgram vaccine dose. 
+Expressed in bytes, this is around 14 petabytes, although it must be said
+this consists of around [13,000 billion
+repetitions](https://docs.google.com/spreadsheets/d/1vc6p9IXQVRpVQntcI1tCdSMLNDuT8fl8rags0gDxMZA/edit?usp=sharing) of the same 4284
 characters.  The actual informational content of the vaccine is just over a
 kilobyte.  [SARS-CoV-2 itself](https://www.ncbi.nlm.nih.gov/projects/sviewer/?id=NC_045512&tracks=[key:sequence_track,name:Sequence,display_name:Sequence,id:STD649220238,annots:Sequence,ShowLabel:false,ColorGaps:false,shown:true,order:1][key:gene_model_track,name:Genes,display_name:Genes,id:STD3194982005,annots:Unnamed,Options:ShowAllButGenes,CDSProductFeats:true,NtRuler:true,AaRuler:true,HighlightMode:2,ShowLabel:true,shown:true,order:9]&v=1:29903&c=null&select=null&slim=0) weighs in at around 7.5 kilobytes.
+
+> Update: In the original post these numbers were off. [Here is a
+> spreadsheet](https://docs.google.com/spreadsheets/d/1vc6p9IXQVRpVQntcI1tCdSMLNDuT8fl8rags0gDxMZA/edit?usp=sharing)
+> with the correct calculations.
 
 The briefest bit of background
 ------------------------------
@@ -310,8 +320,8 @@ regular RNA U)
 ```
            3   3   3   3   3   3   3   3   3   3   3   3   3   3   3   3
 Virus:   AUG UUU GUU UUU CUU GUU UUA UUG CCA CUA GUC UCU AGU CAG UGU GUU
-Vaccine: AUG UUC GUG UUC CUG GUG CUG CUG CCU CUG GUG UCC AGC CAG UGU GUU
-               !   !   !   !   ! ! ! !     !   !   !   !   !            
+Vaccine: AUG UUC GUG UUC CUG GUG CUG CUG CCU CUG GUG UCC AGC CAG UGU GUG
+               !   !   !   !   ! ! ! !     !   !   !   !   !           !
 ```
 
 So what is going on? I have not accidentally listed the RNA in groups of 3
@@ -419,7 +429,8 @@ substitution in just the right
 place](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5584442/) would make the
 SARS-CoV-1 and MERS
 S proteins take up their 'pre-fusion' configuration, even without being part of
-the whole virus. This works because Proline is a very rigid amino acid. It
+the whole virus. This works [because Proline is a very rigid amino
+acid](https://cen.acs.org/pharmaceuticals/vaccines/tiny-tweak-behind-COVID-19/98/i38). It
 acts as a kind of splint, stabilising the protein in the state we need to
 show to the immune system.
 
@@ -504,8 +515,14 @@ AAAAAAAAAA AAAAAAAAAA AAAAAAAAAA AAAAAAAAAA AAAAAAAAAA AAAA
 This is 30 A's, then a "10 nucleotide linker" (GCAUAUGACU), followed by another 70
 A's.
 
-I suspect that what we see here is the result of further proprietary
-optimization to enhance protein expression even more.
+There are various theories why this linker is there. Some people tell me it
+has to do with DNA plasmid stability, I have also received this from an
+actual expert:
+
+"The 10-nucleotide linker within the poly(A) tail makes it easier to stitch
+together the synthetic DNA fragments that become the template for transcribing
+the mRNA. It also reduces slipping by T7 RNA polymerase so that the
+transcribed mRNA is more uniform in length".
 
 Summarising
 -----------
@@ -515,11 +532,11 @@ for most parts we understand why they are there:
  * The CAP to make sure the RNA looks like regular mRNA
  * A known successful and optimized 5' untranslated region (UTR)
  * A codon optimized signal peptide to send the Spike protein to the right
- place (copied 100% from the original virus)
+ place (amino acids copied 100% from the original virus)
  * A codon optimized version of the original spike, with two 'Proline'
  substitutions to make sure the protein appears in the right form
  * A known successful and optimized 3' untranslated region
- * A slightly mysterious poly-A tail with an unexplained 'linker' in there
+ * A slightly mysterious poly-A tail with a 'linker' in there
 
 The codon optimization adds a lot of G and C to the mRNA. Meanwhile, using Ψ
 (1-methyl-3'-pseudouridylyl) instead of U helps evade our immune system, so
@@ -533,7 +550,7 @@ here](https://berthub.eu/dna). Like this page it is aimed at computer
 people.
 
 In addition, I've been maintaining a page on '[DNA for
-programmers](https://berthub.eu/amazing-dna)' since 2001.
+programmers](https://berthub.eu/articles/posts/amazing-dna/)' since 2001.
 
 You might also enjoy [this introduction to our amazing immune
 system](https://berthub.eu/articles/posts/immune-system/).
