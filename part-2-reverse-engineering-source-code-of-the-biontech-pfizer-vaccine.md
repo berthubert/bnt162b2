@@ -262,7 +262,7 @@ This achieves a rather poor 53.1% match with the BioNTech RNA vaccine, but
 it is a start.
 
 When you design your algorithm, be sure to only base your choices on the
-virus RNA. Do not peak into the BioNTech RNA!
+virus RNA. Do not peek into the BioNTech RNA!
 
 If you have achieved a score beyond 53.1% please email a link to your code
 to bert@hubertnet.nl (or [@PowerDNS_Bert](https://twitter.com/PowerDNS_Bert)
