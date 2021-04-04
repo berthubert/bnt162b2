@@ -220,7 +220,7 @@ A sample algorithm
 ------------------
 On the [GitHub repository](https://github.com/berthubert/bnt162b2) you can
 find
-[3rd-gc.gp](https://github.com/berthubert/bnt162b2/blob/master/3rd-gc.go). 
+[3rd-gc.go](https://github.com/berthubert/bnt162b2/blob/master/3rd-gc.go). 
 
 This implements a simple strategy that works like this:
 
