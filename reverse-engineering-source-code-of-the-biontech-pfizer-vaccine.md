@@ -28,6 +28,7 @@ images:
 / [עִברִית](https://github.com/chilik/Hebrew-ReversingSARS-CoV-2mRNAVaccine/blob/main/%D7%94%D7%A0%D7%93%D7%A1%D7%94%20%D7%9C%D7%90%D7%97%D7%95%D7%A8%20%D7%A9%D7%9C%20%D7%A7%D7%95%D7%93%20%D7%94%D7%9E%D7%A7%D7%95%D7%A8%20%D7%A9%D7%9C%20%D7%94%D7%97%D7%99%D7%A1%D7%95%D7%9F%20BioNTech%20-%20Pfizer%20SARS-CoV-2.pdf)
 / [Hrvatski](https://docs.google.com/document/d/1BODRitAvGuDYGZCHU5LY-AkNhs9_1cVDubdRvz-cSPY/edit)
 / [Italiano](https://berthub.eu/articles/posts/italian-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
+/ [Magyar](https://www.covid1001.hu/vakcina-forraskod-visszafejtese/) 
 / [Nederlands](https://berthub.eu/articles/posts/dutch-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/)
 / [日本語](https://note.com/yubais/n/n349ab986da42)
 / [日本語 2](https://msakai.github.io/bnt162b2/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine.ja/)
@@ -38,12 +39,19 @@ images:
 / [Română](https://www.astarostech.com/read/sarscov2-ro/vaccine-mrna.html)
 / [Slovensky](https://dennikn.sk/blog/2205850/ako-funguje-zdrojovy-kod-vakciny-sars-cov-2/) 
 / [Slovenščina](https://berthub.eu/articles/posts/reverzni-inženiring-izvorne-kode-cepiva-biontech-pfizer-proti-sars-cov-2/) 
+/ [Srpski](https://berthub.eu/articles/posts/naliza-izvornog-k%C3%B4da-vakcine-biontech-pfizer-sars-cov-2/)
 / [Türk](https://berthub.eu/articles/posts/biontech-pfizer-mrna-a%C5%9F%C4%B1lar%C4%B1n%C4%B1n-kaynak-kodu/)
 / [український](https://texty.org.ua/articles/102631/rekonstrukciya-vyhidnoho-kodu-vakcyny-biontechpfizer-sars-cov-2/)
 / [Markdown for translating](https://raw.githubusercontent.com/berthubert/bnt162b2/master/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine.md)
+/ [**Fun video by LlamaExplains**](https://www.youtube.com/watch?v=RntuQ_BULho&feature=youtu.be)
+/ [Video version by Giff Ransom](https://www.youtube.com/watch?v=JfwlKMZrY0U&feature=emb_logo)
 
 Welcome! In this post, we'll be taking a character-by-character look at the
 source code of the BioNTech/Pfizer SARS-CoV-2 mRNA vaccine.
+
+> Update: The other up and coming vaccines are described in
+> [The Genetic Code and Proteins of the Other Covid-19
+> Vaccines](https://berthub.eu/articles/posts/genetic-code-of-covid-19-vaccines/).
 
 > *I want to thank the large cast of people who spent time previewing this
 > article for legibility and correctness. All mistakes remain mine though,
@@ -60,7 +68,7 @@ known as Tozinameran [also known as
 Comirnaty](https://twitter.com/PowerDNS_Bert/status/1342109138965422083). 
 
 <center>
-{{< figure src="/articles/bnt162b2.png" caption="First 500 characters of the BNT162b2 mRNA. Source: [World Health Organization](https://mednet-communities.net/inn/db/media/docs/11889.doc)">}}
+{{< figure src="/articles/bnt162b2.png" caption="First 500 characters of the BNT162b2 mRNA. Source: [World Health Organization](/articles/11889.doc)">}}
 </center>
 
 The BNT162b2 mRNA vaccine has this digital code at its heart.  It is 4284
@@ -70,7 +78,7 @@ DNA printer (yes), which then converted the bytes on disk to actual DNA
 molecules.
 
 <center>
-{{< figure src="/articles/bioxp-3200.jpg" caption="A [Codex DNA](https://codexdna.com/products/bioxp-system/) BioXp 3200 DNA printer" >}}
+{{< figure src="/articles/kilobaser.jpg" caption="A [Kilobaser](https://kilobaser.com/) Express DNA Machine" >}}
 </center>
 
 Out of such a machine come tiny amounts of DNA, which after a lot of
@@ -78,6 +86,17 @@ biological and chemical processing end up as RNA (more about which later) in
 the vaccine vial.  A 30 microgram dose turns out to actually contain 30
 micrograms of RNA.  In addition, there is a clever lipid (fatty) packaging
 system that gets the mRNA into our cells.
+
+> Update: Derek Lowe of the famous [In the pipeline blog](https://blogs.sciencemag.org/pipeline/)
+> over at Science has written a comprehensive post "[RNA Vaccines And Their
+> Lipids](https://blogs.sciencemag.org/pipeline/archives/2021/01/11/rna-vaccines-and-their-lipids)"
+> which neatly explains the lipid and delivery parts of the vaccines that I
+> am not competent to describe. Luckily Derek is!
+
+> Update 2:
+> Jonas Neubert and Cornelia Scheitz have written [this awesome page](https://blog.jonasneubert.com/2021/01/10/exploring-the-supply-chain-of-the-pfizer-biontech-and-moderna-covid-19-vaccines/)
+> with loads of detail on how the vaccines actually get produced and
+> distributed.  Recommended!
 
 RNA is the volatile 'working memory' version of DNA.  DNA is like the flash
 drive storage of biology.  DNA is very durable, internally redundant and
@@ -123,7 +142,7 @@ of processing. A codon contains 6 bits of information (2 bits per DNA
 character, 3 characters = 6 bits. This means 2⁶ = 64 different codon values).
 
 Pretty digital so far. When in doubt, [head to the WHO
-document](https://mednet-communities.net/inn/db/media/docs/11889.doc) with the
+document](/articles/11889.doc) with the
 digital code to see for yourself.
 
 > *Some further reading is [available
@@ -230,7 +249,8 @@ loses interest. For real.
 
 So in the BioNTech/Pfizer vaccine, every U has been replaced by
 1-methyl-3'-pseudouridylyl, denoted by Ψ.  The really clever bit is that
-although this replacement Ψ placates (calms) our immune system, it is
+[although this replacement Ψ placates (calms) our immune
+system](https://pubmed.ncbi.nlm.nih.gov/16111635/), it is
 accepted as a normal U by relevant parts of the cell.
 
 In computer security we also know this trick - it sometimes is possible to
@@ -257,7 +277,7 @@ course](https://twitter.com/PowerDNS_Bert/status/1329861047168225281).
 > DNA](https://www.deplatformdisease.com/blog/no-really-mrna-vaccines-are-not-going-to-affect-your-dna)"
 > is also a good read.
 
-Ok, back to the 5' UTR. What do these 51 characters do? As everything in
+Ok, back to the 5' UTR. What do these 52 characters do? As everything in
 nature, almost nothing has one clear function. 
 
 When our cells need to *translate* RNA into proteins, this is done using a
@@ -364,7 +384,7 @@ also [converted more efficiently into
 proteins](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1463026/), 
 
 And this has been achieved in the vaccine RNA by replacing many characters
-with Gs and Cs wherever this was possible.
+with [Gs and Cs](https://www.embopress.org/doi/full/10.15252/embr.201948220) wherever this was possible.
 
 > I'm slightly fascinated by the *one* change that did not lead to an
 > additional C or G, the CCA -> CCU modification. If anyone knows the reason,
@@ -372,6 +392,14 @@ with Gs and Cs wherever this was possible.
 > than others in the human genome, but [I also read that this does not
 > influence translation speed a
 > lot](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1006024).
+> UPDATE: A number of readers [have pointed
+> out](https://twitter.com/noort_zuit/status/1348924353921081344) that this
+> change could prevent a "hairpin" in the RNA. You can try this out yourself on
+> the [RNAFold service](http://rna.tbi.univie.ac.at/cgi-bin/RNAWebSuite/RNAfold.cgi).
+>
+> This [marvelous article by Chelsea Voss
+> ](https://csvoss.com/a-mechanists-guide-to-the-coronavirus-genome) goes
+> into great depth on the RNA shape and contents of SARS-CoV-2.
 
 The actual Spike protein
 ------------------------
@@ -524,6 +552,10 @@ together the synthetic DNA fragments that become the template for transcribing
 the mRNA. It also reduces slipping by T7 RNA polymerase so that the
 transcribed mRNA is more uniform in length".
 
+The article "[Segmented poly(A) tails significantly reduce recombination of plasmid DNA without affecting mRNA translation efficiency or
+half-life](https://rnajournal.cshlp.org/content/25/4/507.long)" also has a
+compelling description of how a linked can benefit efficacy. 
+
 Summarising
 -----------
 With this, we now know the exact mRNA contents of the BNT162b2 vaccine, and
@@ -536,7 +568,7 @@ for most parts we understand why they are there:
  * A codon optimized version of the original spike, with two 'Proline'
  substitutions to make sure the protein appears in the right form
  * A known successful and optimized 3' untranslated region
- * A slightly mysterious poly-A tail with a 'linker' in there
+ * A poly-A tail with a 'linker' in there
 
 The codon optimization adds a lot of G and C to the mRNA. Meanwhile, using Ψ
 (1-methyl-3'-pseudouridylyl) instead of U helps evade our immune system, so
@@ -545,6 +577,10 @@ system.
 
 Further reading/viewing
 -----------------------
+If you like this work, [you can hire
+me](https://berthub.eu/articles/posts/hire-me-semi-popular-science/) to
+write about your scientific/technical/medical product as well!
+
 In 2017 I held a two hour presentation on DNA, which you can [view
 here](https://berthub.eu/dna). Like this page it is aimed at computer
 people.
@@ -557,6 +593,16 @@ system](https://berthub.eu/articles/posts/immune-system/).
 
 Finally, [this listing of my blog posts](https://berthub.eu/articles) has quite some
 DNA, SARS-CoV-2 and COVID related material.
+
+As an update, the other up and coming vaccines are described in [The Genetic
+Code and Proteins of the Other Covid-19 Vaccines](https://berthub.eu/articles/posts/genetic-code-of-covid-19-vaccines/)
+
+As a further update, there is now also a post [describing the CureVac mRNA
+vaccine](https://berthub.eu/articles/posts/curevac-vaccine-and-wonders-of-biology/).
+The CureVac vaccine consists of mRNA that has not been modified, but instead
+has taken a leaf out of other parts of biology in hopes of making things
+work, and the post touches on those. 
+
 
 <!--
 
