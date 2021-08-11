@@ -232,7 +232,7 @@ This implements a simple strategy that works like this:
 
 Or in `golang`:
 
-```
+```go
 // base case, don't do anything
 our = vir
 
