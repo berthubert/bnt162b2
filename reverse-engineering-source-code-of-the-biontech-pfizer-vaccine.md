@@ -41,7 +41,7 @@ images:
 / [Slovenščina](https://berthub.eu/articles/posts/reverzni-inženiring-izvorne-kode-cepiva-biontech-pfizer-proti-sars-cov-2/) 
 / [Srpski](https://berthub.eu/articles/posts/naliza-izvornog-k%C3%B4da-vakcine-biontech-pfizer-sars-cov-2/)
 / [Türk](https://berthub.eu/articles/posts/biontech-pfizer-mrna-a%C5%9F%C4%B1lar%C4%B1n%C4%B1n-kaynak-kodu/)
-/ [український](https://texty.org.ua/articles/102631/rekonstrukciya-vyhidnoho-kodu-vakcyny-biontechpfizer-sars-cov-2/)
+/ [Українська](https://texty.org.ua/articles/102631/rekonstrukciya-vyhidnoho-kodu-vakcyny-biontechpfizer-sars-cov-2/)
 / [Markdown for translating](https://raw.githubusercontent.com/berthubert/bnt162b2/master/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine.md)
 / [**Fun video by LlamaExplains**](https://www.youtube.com/watch?v=RntuQ_BULho&feature=youtu.be)
 / [Video version by Giff Ransom](https://www.youtube.com/watch?v=JfwlKMZrY0U&feature=emb_logo)
